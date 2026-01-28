@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KLINK | Фасадные системы ЮФО</title>
+    
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com"></script>
+    <script src="https://cdnjs.cloudflare.com"></script>
+
+    <style>
+        :root {
+            --bg: #f8f6f4;
+            --dark: #1a1a1a;
+            --gold: #b29475;
+            --whatsapp: #25D366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--bg); color: var(--dark); font-family: 'Montserrat', sans-serif; line-height: 1.6; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Навигация */
+        nav { position: fixed; top: 0; width: 100%; padding: 20px 5vw; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(0,0,0,0.1); backdrop-filter: blur(10px); color: white; }
+        .logo { letter-spacing: 5px; font-weight: 600; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* Hero - Решаем вопрос с читаемостью текста */
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: #000; }
+        .hero-title { z-index: 5; text-align: center; color: white; }
+        .hero-title h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 8rem); font-weight: 300; line-height: 0.8; text-shadow: 0 5px 20px rgba(0,0,0,0.8); }
+        .dynamic-city { color: var(--gold); display: block; font-size: 0.35em; margin-top: 15px; letter-spacing: 6px; text-shadow: 0 2px 10px rgba(0,0,0,1); }
+        .hero-loc { font-size: 10px; letter-spacing: 3px; margin-top: 20px; opacity: 0.8; background: rgba(0,0,0,0.5); padding: 5px 10px; display: inline-block; }
+
+        .main-img-box { position: absolute; top:0; left:0; width: 100%; height: 100%; z-index: 1; }
+        .main-img-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; } /* Затемняем фото */
+
+        /* Философия */
+        .philosophy { padding: 100px 0; background: #fff; }
+        .phil-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; }
+        .phil-intro { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; }
+        .phil-text p { margin-bottom: 20px; color: #555; }
+
+        /* ГАРАНТИРОВАННЫЕ БЛОКИ ФОТО (КАТАЛОГ) */
+        .catalog-section { padding: 80px 0; background: var(--bg); }
+        .catalog-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 30px; 
+        }
+        .brick-card { 
+            position: relative; 
+            height: 500px; /* Фиксированная высота для стабильности */
+            background: #e0e0e0; 
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        .brick-card img { width: 100%; height: 100%; object-fit: cover; transition: 1.2s ease; }
+        .brick-card:hover img { transform: scale(1.05); }
+        .brick-label { 
+            position: absolute; 
+            bottom: 30px; 
+            left: 30px; 
+            color: white; 
+            z-index: 5; 
+            font-family: 'Cormorant Garamond', serif; 
+            font-size: 2rem; 
+            text-shadow: 0 2px 10px rgba(0,0,0,0.9); 
+        }
+        .brick-card::after { 
+            content: ''; 
+            position: absolute; 
+            bottom:0; left:0; width:100%; height:40%; 
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); 
+        }
+
+        /* Шаги */
+        .steps { padding: 100px 0; background: #fff; }
+        .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .step-card { padding: 30px; border-top: 1px solid #eee; }
+        .step-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 15px; }
+
+        /* Футер */
+        footer { background: #111; color: #fff; padding: 100px 0; text-align: center; }
+        .phone-link { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 4rem); color: white; text-decoration: none; display: block; margin: 30px 0; transition: 0.3s; }
+        .phone-link:hover { color: var(--gold); }
+
+        /* WhatsApp */
+        .wa-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: var(--whatsapp); border-radius: 50px; z-index: 1000; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+
+        @media (max-width: 850px) {
+            .phil-grid, .catalog-grid, .steps-grid { grid-template-columns: 1fr; }
+            .brick-card { height: 400px; }
+            nav { padding: 15px 20px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">KLINK.ЮГ</div>
+        <div class="nav-links">
+            <a href="#catalog">Коллекции</a>
+            <a href="#steps">Процесс</a>
+            <a href="#contacts">Контакты</a>
+        </div>
+    </nav>
+
+    <a href="https://wa.me" class="wa-float" target="_blank">
+        <svg width="30" height="30" fill="white" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.06 3.973L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607zM7.994 14.52a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+    </a>
+
+    <section class="hero">
+        <div class="hero-title">
+            <h1>KLINK</h1>
+            <span class="dynamic-city" id="city-text">АРХИТЕКТУРНЫЕ РЕШЕНИЯ</span>
+            <div class="hero-loc">РОСТОВ • КРАСНОДАР • ДНР • ЛНР • АРМАВИР</div>
+        </div>
+        <div class="main-img-box"><img src="Keko1.png" alt="KLINK ЮГ"></div>
+    </section>
+
+    <section class="philosophy container">
+        <div class="phil-grid">
+            <div class="phil-intro">
+                «Хочу, чтобы было красиво, надежно, и чтобы я больше об этом не думал».
+            </div>
+            <div class="phil-text">
+                <p>Мы берем на себя полный цикл фасадных работ. Вам не нужно искать разных мастеров — KLINK обеспечит единство стиля от кровли до забора.</p>
+                <p><strong>Вы правильно обратились. Рады сотрудничеству.</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ КАТАЛОГА -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <div class="catalog-grid">
+                <div class="brick-card">
+                    <img src="Keko2.png" alt="Фактура 1">
+                    <div class="brick-label">Onyx Mist</div>
+                </div>
+                <div class="brick-card">
+                    <img src="Keko3.png" alt="Фактура 2">
+                    <div class="brick-label">Nordic Ash</div>
+                </div>
+                <div class="brick-card">
+                    <img src="Keko4.png" alt="Фактура 3">
+                    <div class="brick-label">Tuscan Clay</div>
+                </div>
+                <div class="brick-card">
+                    <img src="Keko5.png" alt="Фактура 4">
+                    <div class="brick-label">Desert Sand</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps" class="steps container">
+        <div class="steps-grid">
+            <div class="step-card"><h3>Замер</h3><p>Выезд технолога с образцами по всему Южному региону.</p></div>
+            <div class="step-card"><h3>Расчет</h3><p>Прозрачная смета проекта без скрытых переплат.</p></div>
+            <div class="step-card"><h3>Монтаж</h3><p>Профессиональное исполнение штатными бригадами KLINK.</p></div>
+        </div>
+    </section>
+
+    <footer id="contacts" class="container">
+        <span style="font-size: 10px; letter-spacing: 3px; color: #555;">СВЯЗАТЬСЯ С НАМИ</span>
+        <a href="tel:+79110743258" class="phone-link">+7 911 074 32 58</a>
+        <p style="color: #666;">Ростов-на-Дону, Краснодар, ДНР, ЛНР, Армавир</p>
+    </footer>
+
+</body>
+</html>
