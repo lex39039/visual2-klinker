@@ -22,12 +22,10 @@
         body { background: var(--bg); color: var(--dark); font-family: 'Montserrat', sans-serif; line-height: 1.6; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-        /* Навигация */
         nav { position: fixed; top: 0; width: 100%; padding: 20px 5vw; display: flex; justify-content: space-between; align-items: center; z-index: 1000; background: rgba(0,0,0,0.1); backdrop-filter: blur(10px); color: white; }
         .logo { letter-spacing: 5px; font-weight: 600; }
         .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* Hero */
         .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: #000; }
         .hero-title { z-index: 5; text-align: center; color: white; }
         .hero-title h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 8rem); font-weight: 300; line-height: 0.8; text-shadow: 0 5px 20px rgba(0,0,0,0.8); }
@@ -37,13 +35,11 @@
         .main-img-box { position: absolute; top:0; left:0; width: 100%; height: 100%; z-index: 1; }
         .main-img-box img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; }
 
-        /* Философия */
         .philosophy { padding: 100px 0; background: #fff; }
         .phil-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; }
         .phil-intro { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; }
         .phil-text p { margin-bottom: 20px; color: #555; }
 
-        /* Каталог */
         .catalog-section { padding: 80px 0; background: var(--bg); }
         .catalog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
         .brick-card { position: relative; height: 500px; background: #e0e0e0; overflow: hidden; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
@@ -52,49 +48,30 @@
         .brick-label { position: absolute; bottom: 30px; left: 30px; color: white; z-index: 5; font-family: 'Cormorant Garamond', serif; font-size: 2rem; text-shadow: 0 2px 10px rgba(0,0,0,0.9); }
         .brick-card::after { content: ''; position: absolute; bottom:0; left:0; width:100%; height:40%; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); }
 
-        /* Шаги */
         .steps { padding: 100px 0; background: #fff; }
         .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
         .step-card { padding: 30px; border-top: 1px solid #eee; }
         .step-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; margin-bottom: 15px; }
 
-        /* Футер */
         footer { background: #111; color: #fff; padding: 100px 0; text-align: center; }
         .cta-text { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; opacity: 0.9; }
         .phone-link { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 4rem); color: white; text-decoration: none; display: block; margin: 10px 0 30px 0; transition: 0.3s; }
         .phone-link:hover { color: var(--gold); }
 
-        /* Кнопки связи */
         .contact-stack { position: fixed; bottom: 30px; right: 30px; z-index: 2000; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
-        
-        /* Подсказка для MAX */
         .max-tooltip { background: white; color: var(--dark); padding: 8px 15px; border-radius: 8px; font-size: 10px; font-weight: 600; letter-spacing: 1px; margin-bottom: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); border: 1px solid #eee; position: relative; animation: float 3s ease-in-out infinite; }
         .max-tooltip::after { content: ''; position: absolute; bottom: -5px; right: 25px; width: 10px; height: 10px; background: white; transform: rotate(45deg); border-right: 1px solid #eee; border-bottom: 1px solid #eee; }
-
+        
         .messenger-btn { width: 64px; height: 64px; border-radius: 18px; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.2); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .messenger-btn:hover { transform: scale(1.1) translateY(-5px); }
-        
         .btn-max { background: var(--max-gradient); border: 2px solid rgba(255,255,255,0.2); animation: pulse-blue 2s infinite; }
         .btn-max span { color: white; font-weight: 900; font-family: 'Montserrat', sans-serif; font-size: 18px; letter-spacing: -0.5px; }
-        
         .btn-wa { background: var(--whatsapp); width: 56px; height: 56px; border-radius: 50%; opacity: 0.9; }
 
-        @keyframes pulse-blue {
-            0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); }
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
+        @keyframes pulse-blue { 0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); } }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-        @media (max-width: 850px) {
-            .phil-grid, .catalog-grid, .steps-grid { grid-template-columns: 1fr; }
-            .brick-card { height: 350px; }
-            nav { padding: 15px 20px; }
-            .nav-links { display: none; }
-        }
+        @media (max-width: 850px) { .phil-grid, .catalog-grid, .steps-grid { grid-template-columns: 1fr; } .brick-card { height: 350px; } nav { padding: 15px 20px; } .nav-links { display: none; } }
     </style>
 </head>
 <body>
@@ -108,10 +85,9 @@
         </div>
     </nav>
 
-    <!-- КНОПКИ СВЯЗИ -->
     <div class="contact-stack">
         <div class="max-tooltip">БЕСПЛАТНЫЙ РАСЧЕТ В MAX</div>
-        <a href="https://max.ru" class="messenger-btn btn-max" target="_blank">
+        <a href="https://max.ru/u/f9LHodD0cOJTswzOCZOyxR79we7NWrQpy-q1p0sDV5UynjbfHf71br4E6ck" class="messenger-btn btn-max" target="_blank">
             <span>MAX</span>
         </a>
         <a href="https://wa.me" class="messenger-btn btn-wa" target="_blank">
@@ -130,9 +106,7 @@
 
     <section class="philosophy container">
         <div class="phil-grid">
-            <div class="phil-intro">
-                «Хочу, чтобы было красиво, надежно, и чтобы я больше об этом не думал».
-            </div>
+            <div class="phil-intro">«Хочу, чтобы было красиво, надежно, и чтобы я больше об этом не думал».</div>
             <div class="phil-text">
                 <p>Мы берем на себя полный цикл фасадных работ. Вам не нужно искать разных мастеров — KLINK обеспечит единство стиля от кровли до забора.</p>
                 <p><strong>Вы правильно обратились. Рады сотрудничеству.</strong></p>
@@ -143,33 +117,19 @@
     <section id="catalog" class="catalog-section">
         <div class="container">
             <div class="catalog-grid">
-                <div class="brick-card">
-                    <img src="Keko2.png" alt="Фактура 1">
-                    <div class="brick-label">Onyx Mist</div>
-                </div>
-                <div class="brick-card">
-                    <img src="Keko3.png" alt="Фактура 2">
-                    <div class="brick-label">Nordic Ash</div>
-                </div>
+                <div class="brick-card"><img src="Keko2.png" alt="Фактура 1"><div class="brick-label">Onyx Mist</div></div>
+                <div class="brick-card"><img src="Keko3.png" alt="Фактура 2"><div class="brick-label">Nordic Ash</div></div>
             </div>
         </div>
     </section>
 
     <section id="steps" class="steps container">
         <div class="steps-grid">
-            <div class="step-card">
-                <h3>01. Замер</h3>
-                <p>Выезд инженера и точный расчет всех параметров вашего фасада.</p>
-            </div>
-            <div class="step-card">
-                <h3>02. Подбор</h3>
-                <p>Помогаем выбрать идеальную фактуру под ваш архитектурный стиль.</p>
-            </div>
-            <div class="step-card">
-                <h3>03. Монтаж</h3>
-                <p>Профессиональная бригада и гарантия качества на долгие годы.</p>
-            </div>
+            <div class="step-card"><h3>01. Замер</h3><p>Выезд инженера и точный расчет всех параметров вашего фасада.</p></div>
+            <div class="step-card"><h3>02. Подбор</h3><p>Помогаем выбрать идеальную фактуру под ваш архитектурный стиль.</p></div>
+            <div class="step-card"><h3>03. Монтаж</h3><p>Профессиональная бригада и гарантия качества на долгие годы.</p></div>
         </div>
+    </div >
     </section>
 
     <footer id="contacts">
@@ -182,14 +142,11 @@
 
     <script>
         window.addEventListener('load', () => {
-            gsap.from(".messenger-btn", {
-                duration: 1, y: 100, opacity: 0, stagger: 0.2, ease: "power4.out"
-            });
-            gsap.from(".max-tooltip", {
-                duration: 1.5, delay: 1, opacity: 0, y: 20, ease: "back.out"
-            });
+            if(typeof gsap !== 'undefined') {
+                gsap.from(".messenger-btn", { duration: 1, y: 100, opacity: 0, stagger: 0.2, ease: "power4.out" });
+                gsap.from(".max-tooltip", { duration: 1.5, delay: 1, opacity: 0, y: 20, ease: "back.out" });
+            }
         });
     </script>
 </body>
 </html>
-
