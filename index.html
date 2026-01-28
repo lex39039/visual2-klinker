@@ -6,7 +6,6 @@
     <title>KLINK | Фасадные системы ЮФО</title>
     
     <link href="https://fonts.googleapis.com" rel="stylesheet">
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com"></script>
 
     <style>
@@ -29,7 +28,7 @@
         .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; background: #000; }
         .hero-title { z-index: 5; text-align: center; color: white; }
         .hero-title h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 12vw, 8rem); font-weight: 300; line-height: 0.8; text-shadow: 0 5px 20px rgba(0,0,0,0.8); }
-        .dynamic-city { color: var(--gold); display: block; font-size: 0.35em; margin-top: 15px; letter-spacing: 6px; text-shadow: 0 2px 10px rgba(0,0,0,1); }
+        .dynamic-city { color: var(--gold); display: block; font-size: 0.35em; margin-top: 15px; letter-spacing: 6px; }
         .hero-loc { font-size: 10px; letter-spacing: 3px; margin-top: 20px; opacity: 0.8; background: rgba(0,0,0,0.5); padding: 5px 10px; display: inline-block; }
 
         .main-img-box { position: absolute; top:0; left:0; width: 100%; height: 100%; z-index: 1; }
@@ -39,6 +38,12 @@
         .phil-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; }
         .phil-intro { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; line-height: 1.2; }
         .phil-text p { margin-bottom: 20px; color: #555; }
+
+        /* Секция Экологичности */
+        .tech-section { padding: 80px 0; background: #1a1a1a; color: white; }
+        .tech-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 50px; }
+        .tech-item h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; font-weight: 300; }
+        .tech-item p { font-size: 1rem; opacity: 0.8; margin-bottom: 15px; }
 
         .catalog-section { padding: 80px 0; background: var(--bg); }
         .catalog-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; }
@@ -71,7 +76,7 @@
         @keyframes pulse-blue { 0% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(0, 123, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 123, 255, 0); } }
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-        @media (max-width: 850px) { .phil-grid, .catalog-grid, .steps-grid { grid-template-columns: 1fr; } .brick-card { height: 350px; } nav { padding: 15px 20px; } .nav-links { display: none; } }
+        @media (max-width: 850px) { .phil-grid, .catalog-grid, .steps-grid, .tech-grid { grid-template-columns: 1fr; } .brick-card { height: 350px; } nav { padding: 15px 20px; } .nav-links { display: none; } }
     </style>
 </head>
 <body>
@@ -114,6 +119,20 @@
         </div>
     </section>
 
+    <!-- НОВАЯ СЕКЦИЯ: ЭКОЛОГИЧНОСТЬ И ТЕХНОЛОГИИ -->
+    <section class="tech-section">
+        <div class="container tech-grid">
+            <div class="tech-item">
+                <h2>Природная чистота</h2>
+                <p>Гибкий кирпич KLINK на 90% состоит из натурального клинкерного порошка и очищенного кварцевого песка. Это абсолютно безопасный, гипоаллергенный материал, не выделяющий токсичных соединений при нагреве на солнце.</p>
+            </div>
+            <div class="tech-item">
+                <h2>Деловая долговечность</h2>
+                <p>Благодаря защите от ультрафиолета и устойчивости к перепадам температур от -50 до +70°C, ваш фасад сохранит насыщенный цвет и структуру более 30 лет. Это инвестиция в архитектурный облик, которая не требует ежегодного обслуживания.</p>
+            </div>
+        </div>
+    </section>
+
     <section id="catalog" class="catalog-section">
         <div class="container">
             <div class="catalog-grid">
@@ -129,7 +148,6 @@
             <div class="step-card"><h3>02. Подбор</h3><p>Помогаем выбрать идеальную фактуру под ваш архитектурный стиль.</p></div>
             <div class="step-card"><h3>03. Монтаж</h3><p>Профессиональная бригада и гарантия качества на долгие годы.</p></div>
         </div>
-    </div >
     </section>
 
     <footer id="contacts">
@@ -142,10 +160,8 @@
 
     <script>
         window.addEventListener('load', () => {
-            if(typeof gsap !== 'undefined') {
-                gsap.from(".messenger-btn", { duration: 1, y: 100, opacity: 0, stagger: 0.2, ease: "power4.out" });
-                gsap.from(".max-tooltip", { duration: 1.5, delay: 1, opacity: 0, y: 20, ease: "back.out" });
-            }
+            gsap.from(".messenger-btn", { duration: 1, y: 100, opacity: 0, stagger: 0.2, ease: "power4.out" });
+            gsap.from(".max-tooltip", { duration: 1.5, delay: 1, opacity: 0, y: 20, ease: "back.out" });
         });
     </script>
 </body>
